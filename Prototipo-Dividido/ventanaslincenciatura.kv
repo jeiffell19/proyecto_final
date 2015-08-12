@@ -1,0 +1,46 @@
+<Lincenciatura>:
+    canvas:
+        Color:
+            rgba: 109/255., 8/255., 57/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size  
+    Label:
+        text:
+            ('[b]LICENCIATURAS[/b]')
+        markup: True
+        font_size: 50        
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana2.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        # Carrera
+        text:'FACULTADES'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        # on_release: 
+            # root.manager.current=('facultades')
+            # root.mostrar()
+    Button:
+        text: 'Arquictectura'
+        size_hint:(None, None)
+        size:(150, 50)
+        pos_hint:{'center_x': .15,'center_y': .6}
+        # on_release: 
+            # root.manager.current = 'arquitectura'
+            # root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        # on_release: 
+            # root.manager.current = 'principal'
+            # root.mostrar()  

@@ -1,0 +1,382 @@
+<Principal>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'data/logouipapp.png'
+    Label:
+        text:
+            ('[b]Principal[/b]')
+        markup: True
+        font_size: 50        
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78} 
+    Button:
+        # Carrera
+        text:'LICENCIATURAS'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .60}
+        on_release: root.manager.current=('lincenciatura')
+    Button:
+        # Carrera
+        text:'LICENCIATURAS  PARA EJECUTIVOS'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .50}
+        on_release: root.manager.current=('lincenciaturaPro') 
+    Button:
+        # Carrera
+        text:'MAESTRIA'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .40}
+        on_release: root.manager.current=('maestria') 
+    Button:
+        # Carrera
+        text:'POSTGRADOS'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .30}
+        on_release: root.manager.current=('postgrado')
+    Button:
+        # Carrera
+        text:'DIPLOMADOS Y CURSOS'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}    
+        on_release: root.manager.current=('diplomado')
+<Lincenciatura>:
+    canvas:
+        Color:
+            rgba: 109/255., 8/255., 57/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size  
+    Label:
+        text:
+            ('[b]LICENCIATURAS[/b]')
+        markup: True
+        font_size: 50        
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana2.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        # Carrera
+        text:'FACULTADES'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            root.manager.current=('facultades')
+            root.mostrar()
+    Button:
+        text: 'Arquictectura'
+        size_hint:(None, None)
+        size:(150, 50)
+        pos_hint:{'center_x': .15,'center_y': .6}
+        on_release: 
+            root.manager.current = 'arquitectura'
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+<LincenciaturaPro>:
+    
+    canvas:
+        Color:
+            rgba: 0, 1, 0, .5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:
+            ('[b]LICENCIATURAS  PARA EJECUTIVOS[/b]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana3.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Carrera'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            root.manager.current = 'carreras'
+            root.mostrar()    
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+
+<Maestria>:
+    canvas:
+        Color:
+            rgba: 116/255., 395/255., 288/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:
+            ('[b]MAESTRIA[/b]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana4.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text:'FACULTADES'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .25}
+        on_release: 
+            root.manager.current=('facultades')
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+<Postgrado>:
+    canvas:
+        Color:
+            rgba: 37/255., 39/255., 30/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:
+            ('[b]POSTGRADOS (ESPECIALIZACIONES DE UN AÑO) [/b]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana5.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Carrera'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            root.manager.current = 'carreras'
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+
+<Diplomado>:
+    canvas:
+        Color:
+            hsv: 0, 1, 1
+            a: .5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    Label:
+        text:
+            ('[b]DIPLOMADOS Y CURSOS[/b] [color=ff0099]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana6 Opcional.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Carrera'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            root.manager.current = 'carreras'
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+
+<Facultades>:
+    canvas:
+        Color:
+            hsv: 0, 1, 1
+            a: .5
+        Rectangle:
+            pos: self.pos
+            size: self.size         
+    
+    Label:
+        text:
+            ('[b]FACULTADES[/b] [color=ff0099]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78} 
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana2_1,2_2.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Carrera'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            root.manager.current = 'carreras'
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+<Facultades_arquitectura>:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'data/Facultad_Arquitectura.png'
+    Label:
+        text:
+            ('[b]Arquitectura, Comunicación y Diseño[/b]')
+        markup: True
+        font_size: 25        
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78} 
+    Button:
+        # Carrera
+        text:'LIC. EN ARQUITECTURA'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .60}
+        on_release: root.manager.current=('carreras')
+    Button:
+        # Carrera
+        text:'LIC. EN DISEÑO DE INTERIORES'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .50}
+        on_release: root.manager.current=('carreras') 
+    Button:
+        # Carrera
+        text:'LIC. EN DISEÑO GRÀFICO'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .40}
+        on_release: root.manager.current=('carreras') 
+    Button:
+        # Carrera
+        text:'LIC. EN DISEÑO GRÀFICO CON ENFASIS EN PUBLICIDAD Y MERCADEO'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .30}
+        on_release: root.manager.current=('carreras')
+    Button:
+        # Carrera
+        text:'LIC. EN COM. AUDIOVISUAL CON ÈNFASIS EN PRODUCCIÒN DE RADIO Y TV'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}    
+        on_release: root.manager.current=('carreras')  
+    Button:
+        # Carrera
+        text:'LIC. EN PUBLICIDAD Y MERCADEO CON ÈNFASIS EN IMAGEN CORPORATIVA'
+        # Posicion
+        size_hint:(None, None)
+        size:(530, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}    
+        on_release: root.manager.current=('carreras')  
+
+<Carreras>:
+    canvas:
+        Color:
+            hsv: 0, 1, 1
+            a: .5
+        Rectangle:
+            pos: self.pos
+            size: self.size 
+    Label:
+        text:
+            ('[b]CARRERAS[/b] [color=ff0099]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/PROTIPO DE CARRERAS.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            root.manager.current = 'principal'
+            root.mostrar()  
+

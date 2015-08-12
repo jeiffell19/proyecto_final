@@ -1,0 +1,37 @@
+<Maestria>:
+    canvas:
+        Color:
+            rgba: 116/255., 395/255., 288/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:
+            ('[b]MAESTRIA[/b]')
+        markup: True
+        font_size: 25       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana4.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text:'FACULTADES'
+        # Posicion
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .25}
+        on_release: 
+            # root.manager.current=('facultades')
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            # root.manager.current = 'principal'
+            root.mostrar()  

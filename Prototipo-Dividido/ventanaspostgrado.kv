@@ -1,0 +1,38 @@
+#!/usr/bin/python
+# -*- coding: 850 -*-
+<Postgrado>:
+    canvas:
+        Color:
+            rgba: 37/255., 39/255., 30/255., 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text:
+            (U'[b]POSTGRADOS (ESPECIALIZACIONES DE UN AÑO ) [/b]')
+        markup: True
+        font_size: 15       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}
+    Image:
+        size_hint: None, None 
+        size: 400, 250
+        source: 'data/info_ventana5.png'
+        pos_hint:{'center_x': .5 , 'center_y': .5}
+    Button:
+        text: 'Carrera'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .20}
+        on_release: 
+            # root.manager.current = 'carreras'
+            root.mostrar()
+    Button:
+        text: 'Menu Principal'
+        size_hint:(None, None)
+        size:(250, 50)
+        pos_hint:{'center_x': .5,'center_y': .10}
+        on_release: 
+            # root.manager.current = 'principal'
+            root.mostrar()  

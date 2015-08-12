@@ -1,0 +1,51 @@
+<Carreras>:
+    search_results: search_results_list
+    texto: 'Mostrar Consullta'   
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'data/logouipapp.png'
+    Label:
+        id: texto1
+        text: " Carrera: "+root.texto
+        # text:
+        #     ('[b]Carrera[/b] [color=ff0099]')
+        # text:
+        #     ('[b]Carrera[/b] [color=ff0099]')
+        markup: True
+        font_size: 15       
+        size_hint:(None, None)
+        size:(100, 44)
+        pos_hint:{'center_x': .5 , 'center_y': .78}    
+    Button:
+        id: texto1
+        text: root.texto
+        size_hint:(None, None)
+        size:(450, 50)
+        pos_hint:{'center_x': .5,'center_y': .60}
+        on_press:             
+            root.carrera('Lic. en Ingeniería en Sistemas Computacionales')
+    # Button:
+    #     text:'Consullta'            
+    #     size_hint:(None, None)
+    #     size:(250, 50)
+    #     pos_hint:{'center_x': .7,'center_y': .60}
+    #     on_press: 
+    #         root.mostrar()
+    # Button:
+    #     text: 'Menu Principal'
+    #     size_hint:(None, None)
+    #     size:(250, 50)
+    #     pos_hint:{'center_x': .5,'center_y': .10}
+    #     on_release: 
+    #         root.manager.current = 'principal'
+    #         root.mostrar()  
+    ListView:
+        id: search_results_list
+        size_hint:(None, None)
+        size:(400, 200)
+        pos_hint:{'center_x': .5,'center_y': .3}
+        item_strings:["Contenido de las carreras"]
+    
+   

@@ -1,0 +1,32 @@
+#Esquema de Jererquia
+							HOME
+
+	LINCENCIATURAS		LINCENCIATURASPROFESIONALES 	MAESTRIA	POSTGRADO	DIPLOMADO 		
+	FACULTADES		CARRERAS			FACULTADES	CARRERAS	CARRERAS
+	CARRERAS
+
+VENTANAS:
+	
+	home,
+	
+	2: 2.1 a 2.7
+	
+	3:
+	
+	4: 4.1 a 4.6
+	
+	5:
+	
+	6:
+	
+	Carreras
+
+TOTAL: 19 VENTANAS
+
+
+#Priodidades 
+	
+2.2 2.6
+  4.1
+
+#Contiene bastante carreras

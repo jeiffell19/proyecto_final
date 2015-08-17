@@ -24,7 +24,6 @@ class Postgrado(Screen):
 class Diplomado(Screen):
     def mostrar(self):
         print("Diplomado- Menu Principal")
-
 #Ventanas Secundarias 
 class Facultades(Screen):
     def mostrar(self):

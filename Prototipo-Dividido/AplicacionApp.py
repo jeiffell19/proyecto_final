@@ -1,30 +1,31 @@
 #!/usr/bin/env python
-#coding: utf8 
+#coding: utf8
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import NumericProperty
 from kivy.lang import Builder
 
-#Ventanas Principales 
+#Ventanas Principales
 class Principal(Screen):
     pass
 class Licenciatura(Screen):
     def mostrar(self):
-        print("Licenciatura- Menu Principal") 
+        print("Licenciatura- Menu Principal")
 class LicenciaturaPro(Screen):
     def mostrar(self):
         print("LicenciaturaPro-Menu Principal")
 class Maestria(Screen):
     def mostrar(self):
-        print("Maestria- Menu Principal")
+        print("Maestria - Menu Principal")
 class Postgrado(Screen):
     def mostrar(self):
         print("Postgrado Menu Principal")
 class Diplomado(Screen):
     def mostrar(self):
         print("Diplomado- Menu Principal")
-#Ventanas Secundarias 
+
+#Ventanas Secundarias
 class Facultades(Screen):
     def mostrar(self):
         print("Facultades-Menu Principal")
@@ -51,6 +52,25 @@ class Facultades_ingenieria(Screen):
 class Carreras(Screen):
     def mostrar(self):
         print("Carreras-Menu Principal")
+#maestria
+class EmpresarialesMaestria(Screen):
+    def mostrar(self):
+        print("Empresariales - Menu Principal")
+class InnovacionMaestria(Screen):
+    def mostrar(self):
+        print("Innovacion - Menu Principal")
+class EducacionMaestria(Screen):
+    def mostrar(self):
+        print("Educacion - Menu Principal")
+class DerechoMaestria(Screen):
+    def mostrar(self):
+        print("Derecho - Menu Principal")
+class SistemaiMaestria(Screen):
+    def mostrar(self):
+        print("Sistema De Informacion - Menu Principal")
+class SaludMaestria(Screen):
+    def mostrar(self):
+        print("Salud - Menu Principal")
 
 class AplicacionApp(App):
     def build(self):
@@ -69,6 +89,13 @@ class AplicacionApp(App):
         root.add_widget(Facultades_derecho(name='derecho'))
         root.add_widget(Facultades_gastronomia(name='gastronomia'))
         root.add_widget(Facultades_ingenieria(name='ingenieria'))
+        #maestria
+        root.add_widget(EmpresarialesMaestria(name='empresarialesmaestria'))
+        root.add_widget(InnovacionMaestria(name='innovacionmaestria'))
+        root.add_widget(EducacionMaestria(name='educacionmaestria'))
+        root.add_widget(DerechoMaestria(name='derechomaestria'))
+        root.add_widget(SistemaiMaestria(name='sistemaimestria'))
+        root.add_widget(SaludMaestria(name='saludmaestria'))
         root.add_widget(Carreras(name='carreras'))
         return root
 

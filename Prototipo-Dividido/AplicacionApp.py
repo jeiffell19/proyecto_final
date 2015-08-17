@@ -5,25 +5,24 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import NumericProperty
 from kivy.lang import Builder
+from _CarrerasDB_local  import *
 
 #Ventanas Principales
 class Principal(Screen):
     pass
 class Licenciatura(Screen):
     def mostrar(self):
-        print("Licenciatura- Menu Principal")
+        print("Licenciatura- Menu Principal") 
 class LicenciaturaPro(Screen):
     def mostrar(self):
         print("LicenciaturaPro-Menu Principal")
 class Maestria(Screen):
     def mostrar(self):
-        print("Maestria - Menu Principal")
-class Postgrado(Screen):
-    def mostrar(self):
-        print("Postgrado Menu Principal")
+        print("Maestria y postgrado- Menu Principal")
 class Diplomado(Screen):
     def mostrar(self):
         print("Diplomado- Menu Principal")
+
 
 #Ventanas Secundarias
 class Facultades(Screen):
@@ -52,6 +51,44 @@ class Facultades_ingenieria(Screen):
 class Carreras(Screen):
     def mostrar(self):
         print("Carreras-Menu Principal")
+        # Limpiar campos 
+        self.titulo=""
+        self.resolucion=""
+        self.duracion=""
+        self.sede=""
+        self.horario=""
+        self.modalidad=""
+        
+    def carrera(self, resolucio):
+        self.busqueda = ""+resolucio
+        print("funcion para : ",self.busqueda )
+        # informacion ={'Lic. en Ingeniería en Sistemas Computacionales':["CACAD-R-03-2009 / 05-Junio","4 años","Campus UIP y La Chorrera","Diurno y Nocturno","Presencial"]}
+        valor=DbCarreras(self.busqueda )
+        
+        if self.busqueda  in valor:
+            print(self.busqueda )
+            print("si esta DISPONIBLE")
+            for i in range (len(valor)):
+                if i==0:
+                    print("\t Carrera: ",valor[i])
+                    self.titulo= valor[i]
+                if i==1:
+                    print("\t Resolución: ",valor[i])
+                    self.resolucion= valor[i]
+                if i==2:
+                    print("Duración: ",valor[i])
+                    self.duracion= valor[i]
+                if i==3:
+                    print("Sede: ",valor[i])
+                    self.sede= valor[i]
+                if i==4:
+                    print("Horario: ",valor[i])
+                    self.horario= valor[i]
+                if i==5:
+                    print("Modalidad: ",valor[i])
+                    self.modalidad= valor[i]
+        else:
+            print("no esta DISPONIBLE")
 #maestria
 class EmpresarialesMaestria(Screen):
     def mostrar(self):
@@ -79,8 +116,7 @@ class AplicacionApp(App):
         root.add_widget(Principal(name='principal'))
         root.add_widget(Licenciatura(name='licenciatura'))
         root.add_widget(LicenciaturaPro(name='licenciaturaPro'))
-        root.add_widget(Maestria(name='maestria'))
-        root.add_widget(Postgrado(name='postgrado'))
+        root.add_widget(Maestria(name='maestria y postgrado'))
         root.add_widget(Diplomado(name='diplomado'))
         #Pantallas sub-Principales
         root.add_widget(Facultades(name='facultades'))

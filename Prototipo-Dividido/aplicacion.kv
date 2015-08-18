@@ -20,9 +20,7 @@
         size:(100, 44)
         pos_hint:{'center_x': .5 , 'center_y': .90} 
     Button:
-        # Carrera
-        text:'LICENCIATURAS'
-        # Posicion
+    	text:'LICENCIATURAS'
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(250, 50)
@@ -31,9 +29,7 @@
             root.manager.current=('licenciatura')
             root.manager.transition = RiseInTransition()
     Button:
-        # Carrera
         text:'LICENCIATURAS  PARA EJECUTIVOS'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(250, 50)
@@ -42,9 +38,7 @@
             root.manager.current=('licenciaturaPro') 
             root.manager.transition = FallOutTransition()
     Button:
-        # Carrera
         text:'MAESTRIAS Y POSTGRADOS'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(250, 50)
@@ -53,9 +47,7 @@
             root.manager.current=('maestria y postgrado') 
             root.manager.transition = FadeTransition()   
     Button:
-        # Carrera
         text:'DIPLOMADOS Y CURSOS'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(250, 50)
@@ -63,7 +55,6 @@
         on_release: 
             root.manager.current=('diplomado')
             root.manager.transition = RiseInTransition()
-
 <Licenciatura>:
     canvas:
         Color:
@@ -89,7 +80,6 @@
         on_release: 
             root.manager.current = 'arquitectura'
             root.mostrar()
-   
     Button:
         text: 'CIENCIAS DE LA SALUD'
         font_name: 'britanic.ttf'
@@ -99,8 +89,7 @@
         on_release: 
             root.manager.current = 'salud'
             root.mostrar()
-
-    Button:
+	Button:
         text: 'DERECHO'
         font_name: 'britanic.ttf'
         size_hint: (None, None)
@@ -109,8 +98,7 @@
         on_release: 
             root.manager.current = 'derecho'
             root.mostrar()
-
-    Button:
+	Button:
         text: 'GASTRONOMIA, HOTELERIA Y TURISMO'
         font_name: 'britanic.ttf'
         size_hint: (None, None)
@@ -119,7 +107,6 @@
         on_release: 
             root.manager.current = 'gastronomia'
             root.mostrar()
-    
     Button:
         text: 'INGENIERIA Y SISTEMAS'
         font_name: 'britanic.ttf'
@@ -148,7 +135,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()    
- 
 <LicenciaturaPro>:
     canvas:
         Color:
@@ -165,57 +151,43 @@
         size:(100, 44)
         pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
-        # Carrera
         text:'LICENCIATURA EN MERCADEO Y PUBLICIDAD'
-        # Posicion
         size_hint:(None, None)
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .81}
         on_release: root.manager.current=('carreras')
     Button:
-        # Carrera
         text:'LICENCIATURA EN CONTABILIDAD'
-        # Posicion
         size_hint:(None, None)
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .71}
         on_release: root.manager.current=('carreras') 
     Button:
-        # Carrera
         text:'LICENCIATURA EN COMERCIO INTERNACIONAL'
-        # Posicion
         size_hint:(None, None)
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .61}
         on_release: root.manager.current=('carreras') 
     Button:
-        # Carrera
         text:'LICENCIATURA EN BANCA Y FINANZAS'
-        # Posicion
         size_hint:(None, None)
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .51}
         on_release: root.manager.current=('carreras')
     Button:
-        # Carrera
         text:'LICENCIATURA EN INGENIERÌA DE SISTEMAS COMPUTACIONALES'
-        # Posicion
         size_hint:(None, None)
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .41}    
         on_release: root.manager.current=('carreras')  
     Button:
-        # Carrera
         text:'LICENCIATURA EN ADMINISTRACIÒN DE RECURSOS HUMANOS'
-        # Posicion
         size_hint:(None, None)
         size:(550, 50)
         pos_hint:{'center_x': .5,'center_y': .31}    
         on_release: root.manager.current=('carreras') 
     Button:
-        # Carrera
         text:'LICENCIATURA EN ADMINISTRACIÒN DE NEGOCIOS'
-        # Posicion
         size_hint:(None, None)
         size:(550, 50)
         pos_hint:{'center_x': .5,'center_y': .21}    
@@ -230,7 +202,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()  
-
 <Maestria>:
     canvas:
         Rectangle:
@@ -317,7 +288,6 @@
         on_release: 
             root.manager.current = 'carreras'
             root.mostrar()
-
     Button:
         text: '-Mètodos Alternos de \nResoluciòn de Conflictos'
         size_hint: (None, None)
@@ -326,7 +296,6 @@
         on_release: 
             root.manager.current = 'carreras'
             root.mostrar()
-
     Button:
         text: '-Pedagogìa'
         size_hint: (None, None)
@@ -335,8 +304,6 @@
         on_release: 
             root.manager.current = 'carreras'
             root.mostrar()
-    
-
     Button:
         text: 'Menu Principal'
         background_color: (0, 0, 255, .5)
@@ -347,7 +314,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <Diplomado>:
     canvas:
         Color:
@@ -356,7 +322,6 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    
     Label:
         text:
             ('[b]DIPLOMADOS Y CURSOS[/b]')
@@ -366,7 +331,6 @@
         size_hint:(None, None)
         size:(100, 44)
         pos_hint:{'center_x': .5 , 'center_y': .90}
-     
     Button:
         text: 'Cursos'
         size_hint:(None, None)
@@ -375,7 +339,6 @@
         on_release: 
             root.manager.current = 'carreras'
             root.mostrar()    
-
     Button:
         text: 'Menu Principal'
         background_color: (0, 0, 255, .5)
@@ -386,7 +349,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()    
-
 <Facultades>: # prototipo
     canvas:
         Color:
@@ -395,7 +357,6 @@
         Rectangle:
             pos: self.pos
             size: self.size         
-    
     Label:
         text:
             ('[b]FACULTADES[/b] [color=ff0099]')
@@ -425,7 +386,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()  
-
 <Facultades_arquitectura>:
     canvas:
         Rectangle:
@@ -442,60 +402,47 @@
         size:(100, 44)
         pos_hint:{'center_x': .5 , 'center_y': .90} 
     Button:
-        # Carrera
         text:'LIC. EN ARQUITECTURA'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .71}
         on_release: root.manager.current=('carreras')
     Button:
-        # Carrera
         text:'LIC. EN DISEÑO DE INTERIORES'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .61}
         on_release: root.manager.current=('carreras') 
     Button:
-        # Carrera
         text:'LIC. EN DISEÑO GRAFICO'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .51}
         on_release: root.manager.current=('carreras') 
     Button:
-        # Carrera
         text:'LIC. EN DISEÑO GRAFICO CON ENFASIS EN PUBLICIDAD Y MERCADEO'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .41}
         on_release: root.manager.current=('carreras')
     Button:
-        # Carrera
         text:'LIC. EN COM. AUDIOVISUAL CON ENFASIS EN PRODUCCION DE RADIO Y TV'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(530, 50)
         pos_hint:{'center_x': .5,'center_y': .31}    
         on_release: root.manager.current=('carreras')  
     Button:
-        # Carrera
         text:'LIC. EN PUBLICIDAD Y MERCADEO CON ÈNFASIS EN IMAGEN CORPORATIVA'
-        # Posicion
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(550, 50)
         pos_hint:{'center_x': .5,'center_y': .21}    
         on_release: root.manager.current=('carreras')  
-    
     Button:
         text: 'Atras'
         background_color: (0, 0, 255,.5)
@@ -516,7 +463,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()    
-
 <Facultades_ciencias_salud>:
     canvas:
         Rectangle:
@@ -551,7 +497,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()   
-
 <Facultades_derecho>:
     canvas:
         Rectangle:
@@ -594,8 +539,7 @@
         pos_hint:{'center_x': .5,'center_y': .05}
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()    
-
+            root.mostrar()   
 <Facultades_gastronomia>:
     canvas:
         Rectangle:
@@ -630,7 +574,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()     
-
 <Facultades_ingenieria>:
     canvas:
         Rectangle:
@@ -738,7 +681,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <Facultades_maritima>:
     canvas:
         Rectangle:
@@ -805,7 +747,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()
-#maestrias
 <EmpresarialesMaestria>:
     canvas:
         Rectangle:
@@ -904,7 +845,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <InnovacionMaestria>:
     canvas:
         Rectangle:
@@ -976,7 +916,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <EducacionMaestria>:
     canvas:
         Rectangle:
@@ -1030,7 +969,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <DerechoMaestria>:
     canvas:
         Rectangle:
@@ -1093,7 +1031,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <SistemaiMaestria>:
     canvas:
         Rectangle:
@@ -1138,7 +1075,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <SaludMaestria>:
     canvas:
         Rectangle:
@@ -1192,7 +1128,6 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
-
 <Carreras>:
     titulo: " "
     resolucion: " "
@@ -1277,9 +1212,8 @@
         size:(150, 30)
         pos_hint:{'center_x': .25,'center_y': .03} 
         on_release: 
-            # root.manager.current = root.manager.previous()
+            #root.manager.current = root.manager.previous()
             root.mostrar() 
-
     Button:
         text: 'Mostrar informacion'
         background_color: (0, 0, 255,.5)

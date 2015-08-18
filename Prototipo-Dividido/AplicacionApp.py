@@ -22,8 +22,6 @@ class Maestria(Screen):
 class Diplomado(Screen):
     def mostrar(self):
         print("Diplomado- Menu Principal")
-
-
 #Ventanas Secundarias
 class Facultades(Screen):
     def mostrar(self):
@@ -112,7 +110,6 @@ class SistemaiMaestria(Screen):
 class SaludMaestria(Screen):
     def mostrar(self):
         print("Salud - Menu Principal")
-
 class AplicacionApp(App):
     def build(self):
         root = ScreenManager()

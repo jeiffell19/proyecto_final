@@ -48,6 +48,10 @@ class Facultades_ingenieria(Screen):
     """Facultades_ingenieria"""
     def mostrar(self):
         print("Facultades-Menu Principal")
+class Facultades_maritima(Screen):
+    """Facultades_maritima"""
+    def mostrar(self):
+        print("Facultades-Menu Principal")
 class Carreras(Screen):
     def mostrar(self):
         print("Carreras-Menu Principal")
@@ -125,6 +129,7 @@ class AplicacionApp(App):
         root.add_widget(Facultades_derecho(name='derecho'))
         root.add_widget(Facultades_gastronomia(name='gastronomia'))
         root.add_widget(Facultades_ingenieria(name='ingenieria'))
+        root.add_widget(Facultades_maritima(name='maritima'))
         #maestria
         root.add_widget(EmpresarialesMaestria(name='empresarialesmaestria'))
         root.add_widget(InnovacionMaestria(name='innovacionmaestria'))

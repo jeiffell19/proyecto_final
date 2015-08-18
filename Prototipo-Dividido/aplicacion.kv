@@ -5,6 +5,8 @@
 #:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
 #:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
 #:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import Color kivy.graphics.Color
+
 <Principal>:
     canvas:
         Rectangle:
@@ -289,7 +291,7 @@
             root.manager.current = 'carreras'
             root.mostrar()
     Button:
-        text: '-Mètodos Alternos de \nResoluciòn de Conflictos'
+        text: 'Metodos Alternos de \nResolucion de Conflictos'
         size_hint: (None, None)
         size: (200, 60)
         pos_hint:{'center_x': .75,'center_y': .48}
@@ -297,7 +299,7 @@
             root.manager.current = 'carreras'
             root.mostrar()
     Button:
-        text: '-Pedagogìa'
+        text: 'Pedagogia'
         size_hint: (None, None)
         size: (200, 50)
         pos_hint:{'center_x': .75,'center_y': .6}
@@ -470,7 +472,7 @@
             size: self.size
             source: 'data/salud.jpg'
     Label:
-        text:('[b]titulo[/b]')
+        text:('[b]FACULTAD DE CIENCIAS DE LA SALUD[/b]')
         markup: True
         font_size: 40
         font_name: 'snap____.ttf'        
@@ -516,7 +518,7 @@
         text:('[b]LIC. EN DERECHO Y CIENCIAS POLITICAS[/b]')
         markup: True
         font_name: 'britanic.ttf' 
-        background_color: (115, 0, 0, 0.6)
+        background_color: (1.0, 0, 0, 0.6)
         size_hint:(None, None)
         size:(480, 70)
         pos_hint:{'center_x': .5,'center_y': .65} 
@@ -525,21 +527,31 @@
         text:('[b]LIC. EN CRIMINOLOGIA[/b]')
         markup: True
         font_name: 'britanic.ttf' 
-        background_color: (115, 0, 0, 0.6)
+        background_color: (1.0, 0, 0, 0.6)
         size_hint:(None, None)
         size:(480, 70)
         pos_hint:{'center_x': .5,'center_y': .45} 
         on_release: root.manager.current=('carreras') 
     Button:
-        text: 'Menu Principal'
+        text: 'Atras'
+        background_color: (1.0, 0, 0, 0.6)
         font_name: 'britanic.ttf' 
-        background_color: (115, 0, 0, 0.6)
         size_hint:(None, None)
         size:(150, 30)
-        pos_hint:{'center_x': .5,'center_y': .05}
+        pos_hint:{'center_x': .30,'center_y': .03}
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Button:
+        text: 'Menu Principal'
+        background_color: (1.0, 0, 0, 0.6)
+        font_name: 'britanic.ttf' 
+        size_hint:(None, None)
+        size:(150, 30)
+        pos_hint:{'center_x': .70,'center_y': .03}
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()   
+            root.mostrar()  
 <Facultades_gastronomia>:
     canvas:
         Rectangle:
@@ -547,13 +559,13 @@
             size: self.size
             source: 'data/gastro.jpg' 
     Label:
-        text:('[b]titulo[/b]')
+        text:('[b][color=#993300]GASTRONOMIA, HOTELERIA Y TURISMO[/b][/color]')
         markup: True
-        font_size: 40
+        font_size: 30
         font_name: 'snap____.ttf'        
         size_hint:(None, None)
         size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}    
+        pos_hint:{'center_x': .5 , 'center_y': .90}      
     Button:
         text: 'Atras'
         background_color: (0, 0, 255,.5)
@@ -737,16 +749,27 @@
         pos_hint:{'center_x': .5,'center_y': .25} 
         on_release: root.manager.current=('carreras') 
     Button:
-        text: 'Menu Principal'
-        font_name: 'britanic.ttf' 
+        text: 'Atras'
         background_color: (0, 0, 0, 0.5)
         color: (1, 1, 1, 1)
+        font_name: 'britanic.ttf' 
         size_hint:(None, None)
         size:(150, 30)
-        pos_hint:{'center_x': .5,'center_y': .05}
+        pos_hint:{'center_x': .26,'center_y': .03}
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Button:
+        text: 'Menu Principal'
+        background_color: (0, 0, 0, 0.5)
+        color: (1, 1, 1, 1)
+        font_name: 'britanic.ttf' 
+        size_hint:(None, None)
+        size:(150, 30)
+        pos_hint:{'center_x': .74,'center_y': .03}
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()
+            root.mostrar() 
 <EmpresarialesMaestria>:
     canvas:
         Rectangle:
@@ -870,7 +893,7 @@
             root.manager.current=('carreras')
             root.mostrar()
     Button:
-        text:'M. en Gestion Logistica del Transporte Multimoda'
+        text:'M. en Gestion Logistica del Transporte Multimodal'
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(400, 50)
@@ -917,7 +940,7 @@
             root.manager.current = 'principal'
             root.mostrar() 
 <EducacionMaestria>:
-    canvas:
+	canvas:
         Rectangle:
             pos: self.pos
             size: self.size

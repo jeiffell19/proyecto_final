@@ -13,14 +13,9 @@
             pos: self.pos
             size: self.size
             source: 'data/logouipapp.png'
-    Label:
+    Titulo:
         text:
             ('[b]Principal[/b]')
-        markup: True
-        font_size: 50        
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90} 
     Button:
     	text:'LICENCIATURAS'
         size_hint:(None, None)
@@ -31,7 +26,7 @@
             root.manager.current=('licenciatura')
             root.manager.transition = RiseInTransition()
     Button:
-        text:'LICENCIATURAS  PARA EJECUTIVOS'
+        text:'LICENCIATURAS PARA EJECUTIVOS'
         size_hint:(None, None)
         font_name: 'britanic.ttf'
         size:(250, 50)
@@ -64,15 +59,9 @@
         Rectangle:
             pos: self.pos
             size: self.size  
-    Label:
+    Titulo:
         text:
             ('[b]LICENCIATURAS[/b]')
-        markup: True
-        font_size: 40
-        font_name: 'snap____.ttf'        
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90} 
     Button:
         text: 'ARQUITECTURA'
         font_name: 'britanic.ttf'
@@ -128,7 +117,7 @@
             root.manager.current = 'maritima'
             root.mostrar()
     Button:
-        text: 'Menu Principal'
+        text: 'MENU PRINCIPAL'
         background_color: (0, 0, 255, .5)
         font_name: 'britanic.ttf' 
         size_hint:(None, None)
@@ -144,14 +133,9 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    Label:
+    Titulo:
         text:
             ('[b]LICENCIATURAS  PARA EJECUTIVOS[/b]')
-        markup: True
-        font_size: 25       
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'LICENCIATURA EN MERCADEO Y PUBLICIDAD'
         size_hint:(None, None)
@@ -210,14 +194,9 @@
             pos: self.pos
             size: self.size
             source: 'data/preparate_mejores_profesores_maestria1.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]MAESTRIAS[/b]')
-        markup: True
-        font_size: 25  
-        font_name: 'snap____.ttf'       
-        size_hint:(None, None)
-        size:(100, 44)
         pos_hint:{'center_x': .35 , 'center_y': .90}
     Button:
         text:('EMPRESARIALES')
@@ -273,14 +252,9 @@
         on_release:
             root.manager.current=('saludmaestria')
             root.mostrar()
-    Label:
+    Titulo:
         text:
             ('[b]POSTGRADOS[/b]')
-        markup: True      
-        font_size: 25  
-        font_name: 'snap____.ttf'       
-        size_hint:(None, None)
-        size:(100, 44)
         pos_hint:{'center_x': .75 , 'center_y': .90}
     Button:
         text: 'Docencia Superior'
@@ -324,15 +298,9 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    Label:
+    Titulo:
         text:
             ('[b]DIPLOMADOS Y CURSOS[/b]')
-        markup: True
-        font_size: 25  
-        font_name: 'snap____.ttf'       
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text: 'Cursos'
         size_hint:(None, None)
@@ -351,7 +319,7 @@
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()    
-<Facultades>: # prototipo
+<Facultades>:
     canvas:
         Color:
             hsv: 0, 1, 1
@@ -359,14 +327,9 @@
         Rectangle:
             pos: self.pos
             size: self.size         
-    Label:
+    Titulo:
         text:
             ('[b]FACULTADES[/b] [color=ff0099]')
-        markup: True
-        font_size: 25       
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90} 
     Image:
         size_hint: None, None 
         size: 400, 250
@@ -394,15 +357,9 @@
             pos: self.pos
             size: self.size
             source: 'data/Facultad_Arquitectura.png'
-    Label:
+    Titulo:
         text:
             ('[b]Arquitectura, Comunicación y Diseño[/b]')
-        markup: True
-        font_name: 'snap____.ttf'  
-        font_size: 25        
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90} 
     Button:
         text:'LIC. EN ARQUITECTURA'
         size_hint:(None, None)
@@ -445,23 +402,11 @@
         size:(550, 50)
         pos_hint:{'center_x': .5,'center_y': .21}    
         on_release: root.manager.current=('carreras')  
-    Button:
-        text: 'Atras'
-        background_color: (0, 0, 255,.5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .25,'center_y': .03}
+    Boton_Atras:         
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()    
@@ -471,49 +416,24 @@
             pos: self.pos
             size: self.size
             source: 'data/salud.jpg'
-    Label:
+    Titulo:
         text:('[b]FACULTAD DE CIENCIAS DE LA SALUD[/b]')
-        markup: True
-        font_size: 40
-        font_name: 'snap____.ttf'        
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90} 
-    Button:
-        text: 'Atras'
-        background_color: (0, 0, 255,.5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .25,'center_y': .03}
+    Boton_Atras:         
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()   
+            root.mostrar() 
 <Facultades_derecho>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/derecho.jpg'
-    Label:
+    Titulo:
         text:('[b]FACULTAD DE DERECHO[/b]')
-        markup: True
-        font_size: 40
-        font_name: 'snap____.ttf'        
-        size_hint:(None, None)
-        size:(100, 44)
-        color: (0, 0, 0, 0)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:('[b]LIC. EN DERECHO Y CIENCIAS POLITICAS[/b]')
         markup: True
@@ -531,76 +451,41 @@
         size_hint:(None, None)
         size:(480, 70)
         pos_hint:{'center_x': .5,'center_y': .45} 
-        on_release: root.manager.current=('carreras') 
-    Button:
-        text: 'Atras'
-        background_color: (1.0, 0, 0, 0.6)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .30,'center_y': .03}
+        on_release: root.manager.current=('carreras')
+    Boton_Atras: 
+        background_color: (1.0, 0, 0, 0.6)        
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
+    Boton_Menu_Principal:
         background_color: (1.0, 0, 0, 0.6)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .70,'center_y': .03}
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()  
+            root.mostrar()     
 <Facultades_gastronomia>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/gastro.jpg' 
-    Label:
+    Titulo:
         text:('[b][color=#993300]GASTRONOMIA, HOTELERIA Y TURISMO[/b][/color]')
-        markup: True
-        font_size: 30
-        font_name: 'snap____.ttf'        
-        size_hint:(None, None)
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}      
-    Button:
-        text: 'Atras'
-        background_color: (0, 0, 255,.5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .25,'center_y': .03}
+    Boton_Atras: 
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar()     
+            root.mostrar()  
 <Facultades_ingenieria>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/ingenieria.jpg'
-    Label:
+    Titulo:
         text:('[b]FACULTAD DE INGENIERIA Y SISTEMAS[/b]')
-        markup: True
-        font_size: 30
-        font_name: 'snap____.ttf'   
-        size_hint:(None, None)
-        size:(100, 44)
-        color: (0, 0, 0, 0)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:('[b]LIC. EN ING. EN REDES Y DATOS CON ENFASIS EN SIST. INALAMBRICOS[/b]')
         markup: True
@@ -673,42 +558,23 @@
         size:(530, 40)
         pos_hint:{'center_x': .5,'center_y': .11}    
         on_release: root.manager.current=('carreras')
-    Button:
-        text: 'Atras'
-        background_color: (0, 0, 255, 0.5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .26,'center_y': .03}
+    Boton_Atras: 
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, 0.5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .74,'center_y': .03}
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar() 
+            root.mostrar()
 <Facultades_maritima>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/maritima.jpg'
-    Label:
+    Titulo:
         text:('[b]FACULTAD MARITIMA Y PORTUARIA[/b]')
-        markup: True
-        font_size: 30
-        font_name: 'snap____.ttf'   
-        size_hint:(None, None)
-        size:(100, 44)
-        color: (0, 0, 0, 0)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
-	Button:
+    Button:
         text:('[b]LIC. EN ADM. MARITIMA Y PORTUARIA[/b]')
         markup: True
         font_name: 'britanic.ttf' 
@@ -747,44 +613,26 @@
         size_hint:(None, None)
         size:(530, 60)
         pos_hint:{'center_x': .5,'center_y': .25} 
-        on_release: root.manager.current=('carreras') 
-    Button:
-        text: 'Atras'
-        background_color: (0, 0, 0, 0.5)
-        color: (1, 1, 1, 1)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .26,'center_y': .03}
+        on_release: root.manager.current=('carreras')
+    Boton_Atras: 
+        background_color: (1, 1, 1, 1)
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 0, 0.5)
-        color: (1, 1, 1, 1)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .74,'center_y': .03}
+    Boton_Menu_Principal:
+        background_color: (1, 1, 1, 1)
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar() 
+            root.mostrar()  
 <EmpresarialesMaestria>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/maestria-adm-negocios-finanzas.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]EMPRESARIALES[/b]')
-        markup: True
-        font_size: 50
-        size_hint:(None, None)
-        font_name: 'snap____.ttf'
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'M. en Adm. de Negocios con Enfasis en Finanzas'
         size_hint:(None, None)
@@ -858,31 +706,23 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar() 
+            root.mostrar()
 <InnovacionMaestria>:
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'data/transporte-multimodal.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]INNOVACION Y LOGISTICA[/b]')
-        markup: True
-        font_size: 30
-        size_hint:(None, None)
-        font_name: 'snap____.ttf'
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'M. en Gestion Ambiental'
         size_hint:(None, None)
@@ -929,16 +769,14 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
-            root.mostrar() 
+            root.mostrar()
 <EducacionMaestria>:
 	canvas:
         Rectangle:
@@ -982,13 +820,11 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
@@ -998,15 +834,9 @@
             pos: self.pos
             size: self.size
             source: 'data/Maestria_Derecho_Procesal.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]DERECHO[/b]')
-        markup: True
-        font_size: 50
-        size_hint:(None, None)
-        font_name: 'snap____.ttf'
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'Maestria en Derecho Comercial'
         size_hint:(None, None)
@@ -1044,13 +874,11 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
@@ -1060,15 +888,9 @@
             pos: self.pos
             size: self.size
             source: 'data/seguridad-informatica.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]SISTEMA DE INFORMACION[/b]')
-        markup: True
-        font_size: 30
-        size_hint:(None, None)
-        font_name: 'snap____.ttf'
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'M. Gerencia de Sistemas con Enfasis en Seguridad Informatica'
         size_hint:(None, None)
@@ -1088,13 +910,11 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
@@ -1104,15 +924,9 @@
             pos: self.pos
             size: self.size
             source: 'data/servicio-salud.jpg'
-    Label:
+    Titulo:
         text:
             ('[b]SALUD[/b]')
-        markup: True
-        font_size: 50
-        size_hint:(None, None)
-        font_name: 'snap____.ttf'
-        size:(100, 44)
-        pos_hint:{'center_x': .5 , 'center_y': .90}
     Button:
         text:'Maestria en Ortodoncia'
         size_hint:(None, None)
@@ -1141,13 +955,11 @@
         on_release: 
             root.manager.current = 'maestria y postgrado'
             root.mostrar() 
-    Button:
-        text: 'Menu Principal'
-        background_color: (0, 0, 255, .5)
-        font_name: 'britanic.ttf' 
-        size_hint:(None, None)
-        size:(150, 30)
-        pos_hint:{'center_x': .75,'center_y': .03}
+    Boton_Atras: 
+        on_release: 
+            root.manager.current = 'licenciatura'
+            root.mostrar() 
+    Boton_Menu_Principal:
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
@@ -1256,5 +1068,43 @@
         size:(150, 30)
         pos_hint:{'center_x': .75,'center_y': .03}
         on_release:            
-            root.mostrar() 
             root.manager.current = 'principal'
+            root.mostrar()           
+#DECLARACION DE FUNCIONES REUTILIZABLE  
+<Titulo@Label>
+    markup: True
+    font_name: 'snap____.ttf' 
+    font_size: 25        
+    size_hint:(None, None)
+    size:(100, 44)
+    pos_hint:{'center_x': .5 , 'center_y': .90}
+<Agregar_Carrera@Button>
+    pos_hint:{'center_x': .5,'center_y': .7}
+    size_hint:(None, None)
+    size:(250, 50)
+#Reutilizan Butones y dando un nombre 
+<Agregar_Facultad@Agregar_Carrera>
+    text: 'aqui para una facultad'
+<Boton_Atras@Button>
+    text: 'ATRAS'
+    font_name: 'britanic.ttf'
+    background_color: (0, 0, 255,.5)
+    size_hint:(None, None)
+    size:(150, 30)
+    pos_hint:{'center_x': .25,'center_y': .03}
+<Boton_Siguiente@Button>
+    font_name: 'britanic.ttf'
+    text: 'SIGUIENTE'
+    background_color: (0, 0, 255,.5)
+    size_hint:(None, None)
+    size:(150, 30)
+    pos_hint:{'center_x': .75,'center_y': .03} 
+<Boton_Menu_Principal@Button>
+    font_name: 'britanic.ttf'
+    text: 'MENU PRINCIPAL'
+    background_color: (0, 0, 255,.5)
+    size_hint:(None, None)
+    size:(150, 30)
+    pos_hint:{'center_x': .75,'center_y': .03}    
+#Declaracion de Facultades
+<Facultades@Screen>

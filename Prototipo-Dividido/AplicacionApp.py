@@ -12,16 +12,16 @@ class Principal(Screen):
     pass
 class Licenciatura(Screen):
     def mostrar(self):
-        print("Licenciatura- Menu Principal") 
+        print("Licenciatura-Menu Principal") 
 class LicenciaturaPro(Screen):
     def mostrar(self):
         print("LicenciaturaPro-Menu Principal")
 class Maestria(Screen):
     def mostrar(self):
-        print("Maestria y postgrado- Menu Principal")
+        print("Maestria y Postgrado-Menu Principal")
 class Diplomado(Screen):
     def mostrar(self):
-        print("Diplomado- Menu Principal")
+        print("Diplomado-Menu Principal")
 #Ventanas Secundarias
 class Facultades(Screen):
     def mostrar(self):
@@ -110,6 +110,13 @@ class SistemaiMaestria(Screen):
 class SaludMaestria(Screen):
     def mostrar(self):
         print("Salud - Menu Principal")
+class Ventanas(ScreenManager):
+    nom =""
+    def mostrar(self):
+        print("Facultades-Menu Principal")
+class PantallaApp(App):
+    def build(self):
+        return Ventanas()
 class AplicacionApp(App):
     def build(self):
         root = ScreenManager()

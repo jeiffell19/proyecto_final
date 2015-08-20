@@ -417,12 +417,59 @@
             size: self.size
             source: 'data/salud.jpg'
     Titulo:
-        text:('[b]FACULTAD DE CIENCIAS DE LA SALUD[/b]')
-    Boton_Atras:         
+        text:('[b][color=#0101DF]FACULTAD DE CIENCIAS DE LA SALUD[/b]')
+    Button:
+        text:('[b]DOCTOR EN MEDICINA[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (0, 1, 255, 255)
+        size_hint:(None, None)
+        size:(530, 40)
+        pos_hint:{'center_x': .5,'center_y': .65} 
+        on_release: root.manager.current=('carreras')
+    Button:
+        text:('[b]DOCTOR EN CIRUGIA DENTAL[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (0, 1, 255, 255)
+        size_hint:(None, None)
+        size:(530, 40)
+        pos_hint:{'center_x': .5,'center_y': .55} 
+        on_release: root.manager.current=('carreras') 
+    Button:
+        text:('[b]LICENCIATURA EN ENFERMERIA[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (0, 1, 255, 255)
+        size_hint:(None, None)
+        size:(530, 40)
+        pos_hint:{'center_x': .5,'center_y': .45} 
+        on_release: root.manager.current=('carreras') 
+    Button:
+        text:('[b]LICENCIATURA EN PSICOLOGIA[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (0, 1, 255, 255)
+        size_hint:(None, None)
+        size:(530, 40)
+        pos_hint:{'center_x': .5,'center_y': .35} 
+        on_release: root.manager.current=('carreras') 
+    Button:
+        text:('[b]LICENCIATURA EN NUTRICION Y DIETETICA[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (0, 1, 255, 255)
+        size_hint:(None, None)
+        size:(530, 40)
+        pos_hint:{'center_x': .5,'center_y': .25} 
+        on_release: root.manager.current=('carreras')      
+    Boton_Atras:  
+        background_color: (0, 1, 255, 255)      
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
     Boton_Menu_Principal:
+        background_color: (0, 1, 255, 255)
         on_release: 
             root.manager.current = 'principal'
             root.mostrar() 
@@ -470,11 +517,40 @@
             source: 'data/gastro.jpg' 
     Titulo:
         text:('[b][color=#993300]GASTRONOMIA, HOTELERIA Y TURISMO[/b][/color]')
+    Button:
+        text:('[b]LIC. INTERNACIONAL EN ADMINISTRACION DE EMPRESAS HOTELERAS[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (1.1 ,0 ,0 ,0.9 )
+        size_hint:(None, None)
+        size:(480, 70)
+        pos_hint:{'center_x': .5,'center_y': .65} 
+        on_release: root.manager.current=('carreras')  
+    Button:
+        text:('[b]LIC. INTERNACIONAL EN ADMINISTRACION DE EMPRESAS TURISTICAS[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (1.1, 0, 0, 0.9)
+        size_hint:(None, None)
+        size:(480, 70)
+        pos_hint:{'center_x': .5,'center_y': .45} 
+        on_release: root.manager.current=('carreras') 
+    Button:
+        text:('[b]LIC. INTERNACIONAL EN ARTES CULINARIAS[/b]')
+        markup: True
+        font_name: 'britanic.ttf'
+        background_color: (1.1, 0, 0, 0.9)
+        size_hint:(None, None)
+        size:(480, 70)
+        pos_hint:{'center_x': .5,'center_y': .25} 
+        on_release: root.manager.current=('carreras')   
     Boton_Atras: 
+        background_color: (1.1, 0, 0, 0.9)
         on_release: 
             root.manager.current = 'licenciatura'
             root.mostrar() 
     Boton_Menu_Principal:
+        background_color: (1.1, 0, 0, 0.9)
         on_release: 
             root.manager.current = 'principal'
             root.mostrar()  

@@ -5,7 +5,7 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import NumericProperty
 from kivy.lang import Builder
-from _CarrerasDB_local  import *
+# from _CarrerasDB_local  import *
 
 #Ventanas Principales
 class Principal(Screen):
@@ -30,6 +30,10 @@ class Facultades_arquitectura(Screen):
     """Facultades_arquitectura"""
     def mostrar(self):
         print("Facultades-Menu Principal")
+class Facultades_ciencias_administrativas(Screen):
+	"""Facultades_ciencias_administrativas"""
+	def mostrar(self):
+		print("facultades-Menu Principal")
 class Facultades_ciencias_salud(Screen):
     """Facultades_ciencias_salud"""
     def mostrar(self):
@@ -129,6 +133,7 @@ class AplicacionApp(App):
         #Pantallas sub-Principales
         root.add_widget(Facultades(name='facultades'))
         root.add_widget(Facultades_arquitectura(name='arquitectura'))
+        root.add_widget(Facultades_ciencias_administrativas(name='cadministrativa'))
         root.add_widget(Facultades_ciencias_salud(name='salud'))
         root.add_widget(Facultades_derecho(name='derecho'))
         root.add_widget(Facultades_gastronomia(name='gastronomia'))

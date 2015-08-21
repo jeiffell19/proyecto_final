@@ -1,0 +1,883 @@
+#FORMATO:  
+#   Titulo: solo deben agregar:
+#        text:
+#                ('[b]AQUI COLOCAR TITULO[/b]')
+#   Botones: solo se le coloca el evento que necesiten, nueva posiciones o color que deseen que va a realizar:
+#        on_press: root.current = 'principal'
+#EL OBEJETIVO DE USARLO CON ETIQUETAS ES QUE AHORREMOS ESCRIBIR LO MISMO Y SE HACE MAS FACIL ENTENERLO
+
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+   
+#DECLARACION DE FUNCIONES REUTILIZABLE 
+#Propiedades para las titulos  
+<Titulo@Label>
+    markup: True
+    # font_name: 'snap____.ttf' 
+    font_size: 25        
+    size_hint:(None, None)
+    size:(100, 44)
+    pos_hint:{'center_x': .5 , 'center_y': .90}
+
+# Agragarmos cada Oferta academica que contendra las propiedades basicas
+<Agregar_Oferta_Academica@Button>
+    # font_name: 'britanic.ttf'
+    pos_hint:{'center_x': .5,'center_y': .7}
+    size_hint:(None, None)
+    size:(250, 50)
+
+#Reutilizan Butones y dando un nombre 
+<Agregar_Falculta@Agregar_Oferta_Academica>
+    text: 'aqui para una facultades'
+
+#heredamos todos los atributos y solo cambiamos el text 
+<Agregar_Carrera@Agregar_Oferta_Academica>
+    text: 'aqui para una carrera'
+#Declaracion  ventana de Facultades
+<Falcultades@Screen>
+  
+#Declaracion de Carreras
+<Carreras@Screen>
+
+# Esquemas de los label que lleban los nombre ej Resolucion, Carrera
+<TextoInfo@Label> 
+    text: 'aqui va ir un label'
+    font_size: 25             
+    size_hint:(.35, None)
+    size:(100, 40)
+    pos_hint:{'right_top': .10,'center_y': .75}
+
+#Esquema des los Textinput que sera donde se va a mostarar la carrera
+<ResultadoInfo@TextInput>
+    text: 'aqui va ir un texto input: '
+    size_hint:(.65, None)
+    size:(100, 40)
+    pos_hint:{'center_x': .60,'center_y': .75}
+    disabled: True  
+
+<Boton_Atras@Button>
+    text: 'Atras'
+    background_color: (0, 0, 255,.5)
+    size_hint:(None, None)
+    size:(150, 30)
+    pos_hint:{'center_x': .25,'center_y': .03}
+<Boton_Siguiente@Button>
+    text: 'Menu Principal'
+    background_color: (0, 0, 255,.5)
+    size_hint:(None, None)
+    size:(150, 30)
+    pos_hint:{'center_x': .75,'center_y': .03}
+
+# No servira para mandarle la imagen de plande estudios de la carrea
+<Plan@Image>
+    size: self.size
+    source: 'data/1.png'
+    size: self.texture_size
+# Agregamos la imagen de Plan y la ingresamos en Widgit que se pueda mover
+<PlanDeEstudio@Screen>
+    Widget: 
+        Scatter:
+            size_hint: None, None
+            size: image.size
+            Plan:
+                id: image   
+
+<Ventanas>:
+    titulo: " "
+    resolucion: " "
+    duracion:" "
+    sede: " " 
+    horario: " "
+    modalidad: " "  
+    nombreVentana:"principal"  # para regresar una ventana cuando este en Carreras
+    Screen:
+        name: "principal"
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                # source: 'data/logouipapp.png' #se le agrega un imagen como fondo
+                source: 'data/fondo.jpg'
+        # Titulo: # se agrega el Titulo principal
+        #     text:('[b]Principal[/b]')
+        # Botones Para Oferta Academica
+        Image:
+            size_hint: None, None
+            size:(300, 100)
+            pos_hint:{'center_x': .5,'center_y': .90}
+            source: 'data/logo-uip.jpg'
+        Titulo:
+            text:('[b]INICIO[/b]')
+            font_size: 40
+            pos_hint:{'center_x': .5 , 'center_y': .70}
+        Agregar_Oferta_Academica:
+            text:'LICENCIATURAS' # se le agrega el titulo al boton
+            pos_hint:{'center_x': .5,'center_y': .60}
+            on_press: 
+                root.current=('licenciatura')
+                root.transition = RiseInTransition()
+        Agregar_Oferta_Academica:
+            text:'LICENCIATURAS PARA EJECUTIVOS'
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_press:
+                root.current=('licenciaturaPro') 
+                root.transition = FallOutTransition()
+        Agregar_Oferta_Academica:
+            text:'MAESTRIAS Y POSTGRADOS'
+            pos_hint:{'center_x': .5,'center_y': .40}
+            on_press: 
+                root.current=('maestria_y_postgrado') 
+                root.transition = FadeTransition() 
+        Agregar_Oferta_Academica:
+            text:'DIPLOMADOS Y CURSOS'
+            pos_hint:{'center_x': .5,'center_y': .30}
+            on_press: 
+                root.current=('diplomados_y_cursos')
+                root.transition = RiseInTransition()
+    Screen:
+        name: 'licenciatura'
+        canvas:
+            Color:
+                rgba: 109/255., 8/255., 57/255., 1
+            Rectangle:
+                pos: self.pos
+                size: self.size        
+        Titulo:
+            text:
+                ('[b]LICENCIATURAS[/b]')
+        #Botones Para Falcultades
+        Agregar_Falculta:
+            text: 'ARQUITECTURA'
+            size: (300, 50)
+            #no se la asigana posicion porque esta predenterminada en la funcion
+            on_press: 
+                root.current = 'arquitectura'
+        Agregar_Falculta:
+            text: 'CIENCIAS ADMINISTRATIVAS'
+            pos_hint:{'center_x': .5,'center_y': .6}
+            size: (300, 50)
+            on_press: 
+                root.current = 'cienciasAdministrativas'
+        Agregar_Falculta:
+            text: 'CIENCIAS DE LA SALUD'
+            pos_hint:{'center_x': .5,'center_y': .5}
+            size: (300, 50)
+            on_press: 
+                root.current = 'salud'
+        Agregar_Falculta:
+            text: 'DERECHO'
+            pos_hint:{'center_x': .5,'center_y': .4}
+            size: (300, 50)
+            on_press: 
+                root.current = 'derecho'
+        Agregar_Falculta:
+            text: 'GASTRONOMIA, HOTELERIA Y TURISMO'
+            pos_hint:{'center_x': .5,'center_y': .3}
+            size: (300, 50)
+            on_press: 
+                root.current = 'gastronomia'
+        Agregar_Falculta:
+            text: 'INGENIERIA Y SISTEMAS'
+            pos_hint:{'center_x': .5,'center_y': .2}
+            size: (300, 50)
+            on_press: 
+                root.current = 'ingsistemas'
+        Agregar_Falculta:
+            text: 'MARITIMA Y PORTUARIA'
+            pos_hint:{'center_x': .5,'center_y': .1}
+            size: (300, 50)
+            on_press: 
+                root.current = 'maritima'
+
+        Boton_Atras:         
+            on_press: root.current = "principal"
+    Screen:
+        name: 'licenciaturaPro'
+        canvas:
+            Color:
+                rgba: 0/255, 1/255, 0/255, .5
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Titulo:
+            text:
+                ('[b]LICENCIATURAS  PARA EJECUTIVOS[/b]')
+
+        Agregar_Carrera:
+            text:'LICENCIATURA EN MERCADEO Y PUBLICIDAD'
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'LICENCIATURA EN CONTABILIDAD'
+            pos_hint:{'center_x': .5,'center_y': .6}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'LICENCIATURA EN COMERCIO INTERNACIONAL'
+            pos_hint:{'center_x': .5,'center_y': .5}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'LICENCIATURA EN BANCA Y FINANZAS'
+            pos_hint:{'center_x': .5,'center_y': .4}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'LICENCIATURA EN INGENIERÌA DE SISTEMAS COMPUTACIONALES'
+            pos_hint:{'center_x': .5,'center_y': .3}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+
+        Agregar_Carrera:
+            text:'LICENCIATURA EN ADMINISTRACIÒN DE RECURSOS HUMANOS'
+            pos_hint:{'center_x': .5,'center_y': .2}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'LICENCIATURA EN ADMINISTRACIÒN DE NEGOCIOS'
+            pos_hint:{'center_x': .5,'center_y': .1}
+            size:(530, 50)
+            on_press: 
+                root.current=('carreras')
+        Boton_Atras:         
+            on_press: root.current = "principal"
+    Screen:
+        name: 'maestria_y_postgrado'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/preparate_mejores_profesores_maestria1.jpg'
+        Titulo:
+            text:
+                ('[b]MAESTRIAS[/b]')
+            pos_hint:{'center_x': .35 , 'center_y': .90}
+        Agregar_Falculta:
+            text:('EMPRESARIALES')
+            pos_hint:{'center_x': .35,'center_y': .7}
+            on_press:
+                root.current =('empresarialesmaestria')
+        Agregar_Falculta:
+            text:'INNOVACION Y LOGISTICA'
+            pos_hint:{'center_x': .35,'center_y': .6} 
+            on_press:
+                root.current=('innovacionmaestria')           
+        Agregar_Falculta:
+            text:'EDUCACION'
+            pos_hint:{'center_x': .35,'center_y': .5}
+            on_press:
+                root.current=('educacionmaestria')
+        Agregar_Falculta:
+            text:'DERECHO'
+            pos_hint:{'center_x': .35,'center_y': .4}
+            on_press:
+                root.current=('derechomaestria')
+        Agregar_Falculta:
+            text:'SISTEMA DE INFORMACION'
+            pos_hint:{'center_x': .35,'center_y': .3}
+            on_press:
+                root.current=('sistemaimestria')
+        Agregar_Falculta:
+            text:'SALUD'
+            pos_hint:{'center_x': .35,'center_y': .2}
+            on_press:
+                root.current=('saludmaestria')
+        Titulo:
+            text:
+                ('[b]POSTGRADOS[/b]')
+            pos_hint:{'center_x': .75 , 'center_y': .90}
+        Agregar_Carrera:
+            text: 'Docencia Superior'
+            pos_hint:{'center_x': .75,'center_y': .7}
+            on_press: 
+                root.current = 'carreras'
+        Agregar_Carrera:
+            text: 'Pedagogia'
+            pos_hint:{'center_x': .75,'center_y': .5}
+            on_press: 
+                root.current = 'carreras'                
+        Agregar_Carrera:
+            text: 'Metodos Alternos de \nResolucion de Conflictos'
+            pos_hint:{'center_x': .75,'center_y': .6}
+            # size: (200, 60)
+            on_press: 
+                root.current = 'carreras'
+        Boton_Atras:         
+            on_press: root.current = "principal"
+    Screen:
+        name: 'diplomados_y_cursos'
+        canvas:
+            Color:
+                hsv: 0, 1, 1
+                a: .5
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Titulo:
+            text:
+                ('[b]DIPLOMADOS Y CURSOS[/b]')
+        Agregar_Carrera:
+            text:'CURSOS'
+        Agregar_Carrera:
+            text:'Falta por trabajar'
+        Boton_Atras:       
+            on_press: root.current = "principal"
+
+    #Falcutades de Lincenciatura       
+    Falcultades:
+        name: 'arquitectura'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/Facultad_Arquitectura.png'
+        Titulo:
+            text:
+                ('[b] FACULTA DE ARQUITECTURA,\n COMUNICACIÒN Y DISEÑO Arquitectura[/b]')
+        Agregar_Carrera:
+            text:'LIC. EN ARQUITECTURA'      
+            size:(530, 50)
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:'LIC. EN DISEÑO DE INTERIORES'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .6}
+            on_press: root.current=('carreras') 
+        Agregar_Carrera:
+            text:'LIC. EN DISEÑO GRAFICO'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .5}
+            on_press: root.current=('carreras') 
+        Agregar_Carrera:
+            text:'LIC. EN DISEÑO GRAFICO CON ENFASIS EN PUBLICIDAD Y MERCADEO'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .4}
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:'LIC. EN COM. AUDIOVISUAL CON ENFASIS EN PRODUCCION DE RADIO Y TV'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .3}    
+            on_press: root.current=('carreras')  
+        Agregar_Carrera:
+            text:'LIC. EN PUBLICIDAD Y MERCADEO CON ÈNFASIS EN IMAGEN CORPORATIVA'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .2}    
+            on_press: 
+                root.current=('carreras')  
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'cienciasAdministrativas'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                # source: 'data/'
+        Titulo:
+            text:
+                ('[b]FACULTAD DE CIENCIAS \n ADMINISTRATIVAS[/b]')
+        Agregar_Carrera:
+            text: 'Falta por trabajar'
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'salud'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/salud.jpg'
+        Titulo:
+            text:('[b][color=#0101DF]FACULTAD DE CIENCIAS DE LA SALUD[/b]')
+        Agregar_Carrera:
+            text:('DOCTOR EN MEDICINA')
+            background_color: (0, 1, 255, 255) 
+            size:(320, 50)
+            on_release: root.current=('carreras')
+        Agregar_Carrera:
+            text:('DOCTOR EN CIRUGIA DENTAL')
+            background_color: (0, 1, 255, 255)
+            pos_hint:{'center_x': .5,'center_y': .6} 
+            size:(320, 50)
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LICENCIATURA EN ENFERMERIA')
+            background_color: (0, 1, 255, 255)
+            pos_hint:{'center_x': .5,'center_y': .5} 
+            size:(320, 50)
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LICENCIATURA EN PSICOLOGIA')
+            background_color: (0, 1, 255, 255)
+            pos_hint:{'center_x': .5,'center_y': .4} 
+            size:(320, 50)
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LICENCIATURA EN NUTRICION Y DIETETICA')
+            background_color: (0, 1, 255, 255)
+            pos_hint:{'center_x': .5,'center_y': .3}
+            size:(320, 50) 
+            on_release: root.current=('carreras')      
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'derecho'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/derecho.jpg'
+        Titulo:
+            text:
+                ('[b]FACULTAD DE DERECHO[/b]')
+        Agregar_Carrera:
+            text:('LIC. EN DERECHO Y CIENCIAS POLITICAS')
+            background_color: (1.0, 0, 0, 0.6)
+            size:(480, 50)
+            on_press: 
+                root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LIC. EN CRIMINOLOGIA')
+            background_color: (1.0, 0, 0, 0.6)
+            size:(480, 50)
+            pos_hint:{'center_x': .5,'center_y': .6} 
+            on_press: 
+                root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'gastronomia'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/gastro.jpg'
+        Titulo:
+            text:('[b][color=#993300]GASTRONOMIA, HOTELERIA Y TURISMO[/b][/color]')
+        Agregar_Carrera:
+            text:('LIC. INTERNACIONAL EN ADMINISTRACION DE EMPRESAS HOTELERAS')
+            background_color: (1.1 ,0 ,0 ,0.9 )
+            size:(485, 50)
+            on_release: root.current=('carreras')  
+        Agregar_Carrera:
+            text:('LIC. INTERNACIONAL EN ADMINISTRACION DE EMPRESAS TURISTICAS')
+            background_color: (1.1, 0, 0, 0.9)
+            size:(485, 50)
+            pos_hint:{'center_x': .5,'center_y': .6} 
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LIC. INTERNACIONAL EN ARTES CULINARIAS')
+            background_color: (1.1, 0, 0, 0.9)
+            size:(485, 50)
+            pos_hint:{'center_x': .5,'center_y': .5} 
+            on_release: root.current=('carreras') 
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'ingsistemas'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/ingenieria.jpg'
+        Titulo:
+            text:('[b]FACULTAD DE INGENIERIA Y SISTEMAS[/b]')
+        Agregar_Carrera:
+            text:('LIC. EN ING. EN REDES Y DATOS CON ENFASIS EN SIST. INALAMBRICOS')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .8} 
+            on_press: root.current=('carreras')         
+        Agregar_Carrera:
+            text:('LIC. EN ING. EN SISTEMAS COMPUTACIONALES')
+            pos_hint:{'center_x': .5,'center_y': .7}
+            size:(530, 40)    
+            on_press: 
+                root.current=('carreras')
+                root.datos('maestria_y_postgrado','CACAD-R-03-2009 / 05-Junio')
+                root.carrera()
+        Agregar_Carrera:
+            text:('LIC. EN ING. EN ELECTRONICA Y COMUNICACIONES')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .6}    
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:('LIC. EN ING. INDUSTRIAL CON ENFASIS EN GESTION DE CALIDAD')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .5}    
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:('LIC. EN ING. INDUSTRIAL CON ENFASIS EN GESTION DE OPERACIONES')            
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .4}    
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:('LIC. EN ING. INFORMATICA CON ENFASIS EN DESARROLLO DE SOFTWARE')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .3}    
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:('LIC. EN ING. INFORMATICA CON ENFASIS EN REDES Y SIST. TELEMATICOS')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .2}    
+            on_press: root.current=('carreras')
+        Agregar_Carrera:
+            text:('LIC. EN ING. INDUSTRIAL Y DE SISTEMAS')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .1}    
+            on_press: root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'maritima'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/maritima.jpg'
+        Titulo:
+            text:('[b]FACULTAD MARITIMA Y PORTUARIA[/b]')
+        Agregar_Carrera:
+            text:('LIC. EN ADM. MARITIMA Y PORTUARIA')
+            size:(530, 50)
+            background_color: (0, 0, 0, 0.5)
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LIC. EN GESTION MARITIMA CON ENFASIS EN OPERACIONES PORTUARIAS')
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .6} 
+            background_color: (0, 0, 0, 0.5)
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LIC. EN GESTION MARITIMA CON ENFASIS EN TRANSPORTE MULTIMODAL')
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .5}
+            background_color: (0, 0, 0, 0.5) 
+            on_release: root.current=('carreras') 
+        Agregar_Carrera:
+            text:('LIC. EN ING. DE TRANSPORTE Y LOGISTICA')
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .4} 
+            background_color: (0, 0, 0, 0.5)
+            on_release: root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "licenciatura"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+
+    #Facultades de Maestria
+    Falcultades:
+        name: 'empresarialesmaestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/maestria-adm-negocios-finanzas.jpg'
+        Titulo:
+            text:
+                ('[b]EMPRESARIALES[/b]')
+        Agregar_Carrera:
+            text:'M. en Adm. de Negocios con Enfasis en Finanzas'
+            size:(530, 50)
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Adm. de Negocios con Enfasis en Mercadeo'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .60}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Adm. de Negocios con Enfasis en Especializacion en Recursos Humanos'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Adm. de Negocios con Enfasis en Gerencia Estrategica'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Adm. de Negocios con Enfasis en Comercio Internacional'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .40}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Contabilidad con Enfasis en Gestion Tributaria y Fiscal'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .30}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Adm. Hotelera'
+            size:(530, 50)
+            pos_hint:{'center_x': .5,'center_y': .20}
+            on_release:
+                root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'innovacionmaestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/transporte-multimodal.jpg'
+        Titulo:
+            text:
+                ('[b]INNOVACION Y LOGISTICA[/b]')
+        Agregar_Carrera:
+            text:'M. en Gestion Ambiental'
+            size:(400, 50)
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Gestion Logistica del Transporte Multimodal'
+            size:(400, 50)
+            pos_hint:{'center_x': .5,'center_y': .6}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Gerencia de Transporte Multimoda'
+            size:(400, 50)
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'M. en Gerencia de Proyectos'
+            size:(400, 50)
+            pos_hint:{'center_x': .5,'center_y': .4}
+            on_release:
+                root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'educacionmaestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/docencia-superior.jpg'
+        Titulo:
+            text:
+                ('[b]EDUCACION[/b]')
+        Agregar_Carrera:
+            text:'M. en Educacion con Especializacion en Docencia Superior'
+            size:(500, 50)
+            on_release:
+                root.current=('carreras')
+                root.mostrar()
+        Agregar_Carrera:
+            text:'M. en Educacion con Especializacion en Psicopedagogia'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .60}
+            on_release:
+                root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'derechomaestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/Maestria_Derecho_Procesal.jpg'
+        Titulo:
+            text:
+                ('[b]DERECHO[/b]')
+        Agregar_Carrera:
+            text:'Maestria en Derecho Comercial'
+            size:(500, 50)
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'Maestria en Derecho Procesal'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .6}
+            on_release:
+                root.current=('carreras')
+        Agregar_Carrera:
+            text:'Maestria en Derecho Civil y Penal'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_release:
+                root.current=('carreras')
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'sistemaimestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/seguridad-informatica.jpg'
+        Titulo:
+            text:
+                ('[b]SISTEMA DE INFORMACION[/b]')
+        Agregar_Carrera:
+            text:'M. Gerencia de Sistemas con Enfasis en Seguridad Informatica'
+            size_hint:(None, None)
+            #font_name: 'britanic.ttf'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .55}
+            on_release:
+                root.current=('carreras')
+                root.mostrar()
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+    Falcultades:
+        name: 'saludmaestria'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                # source: 'data/'
+        Titulo:
+            text:
+                ('[b]SALUD[/b]')
+        Agregar_Carrera:
+            text:'Maestria en Ortodoncia'
+            size_hint:(None, None)
+            #font_name: 'britanic.ttf'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .60}
+            on_release:
+                root.current=('carreras')
+                root.mostrar()
+        Agregar_Carrera:
+            text:'Maestria en Administracion de los Servicios de la Salud'
+            size_hint:(None, None)
+            #font_name: 'britanic.ttf'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .50}
+            on_release:
+                root.current=('carreras')
+                root.mostrar()
+        Boton_Atras:
+            on_press: root.current = "maestria_y_postgrado"
+        Boton_Siguiente:
+            on_press: root.current = "principal"
+
+    Carreras: 
+        name: 'carreras'
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'data/fondo_azul.jpeg'
+        Titulo:
+            text:('[b][/b]'+root.titulo)
+            # font_name: 'snap____.ttf'
+            size_hint:(None, None)
+            size:(100, 44)
+        TextoInfo:        
+            text: 'Resolucion: '      
+        ResultadoInfo:
+            text: u" "+root.resolucion            
+        TextoInfo:
+            text: 'Duración: ' 
+            pos_hint:{'right_top': .10,'center_y': .65}
+        ResultadoInfo:
+            text: " "+root.duracion
+            pos_hint:{'center_x': .60,'center_y': .65}
+            disabled: True
+        TextoInfo:
+            text: 'Sede: ' 
+            pos_hint:{'right_top': .10,'center_y': .55}
+        ResultadoInfo:
+            text: " "+root.sede
+            pos_hint:{'center_x': .60,'center_y': .55}
+        TextoInfo:
+            text: 'Horario: ' 
+            pos_hint:{'right_top': .10,'center_y': .45}
+        ResultadoInfo:
+            text: " "+root.horario
+            pos_hint:{'center_x': .60,'center_y': .45} 
+        TextoInfo:
+            text: 'Modalidad: ' 
+            pos_hint:{'right_top': .10,'center_y': .35}
+        ResultadoInfo:
+            text: " "+root.modalidad
+            pos_hint:{'center_x': .60,'center_y': .35} 
+        Boton_Atras:
+            on_press: 
+                root.current= ''+root.nombreVentana
+                root.limpiar()
+        #Boton De PLan de Estudios
+        Boton_Atras:
+            text: 'Requisitos'
+            size:(150, 30)
+            pos_hint:{'center_x': .40,'center_y': .20}
+            on_press:  
+                root.carrera() 
+                root.current='requisitos' 
+        Boton_Siguiente:
+            text: 'Plan de Estudio'
+            size:(150, 30)
+            pos_hint:{'center_x': .60,'center_y': .20}
+            on_press:  
+                root.carrera() 
+                root.current='planEstudio' 
+        Boton_Siguiente:
+            text: 'Menu Principal'            
+            on_press: 
+                root.current = "principal"
+                root.limpiar()
+        # PlanDeEstudio:
+        #     name:"planestudio" 
+    PlanDeEstudio
+        name: 'requisitos'
+        Boton_Atras:
+            on_press:  root.current = "carreras"
+    PlanDeEstudio
+        name: 'planEstudio'
+        canvas:
+            Color:
+                rgb: (.9, .9, .9)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Widget: 
+            Scatter:
+                size_hint: None, None
+                size: image.size
+                Plan:
+                    id: image
+                    source: 'data/2.png'
+        Boton_Atras:
+            on_press:  root.current = "carreras"

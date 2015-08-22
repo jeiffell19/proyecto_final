@@ -70,7 +70,6 @@
 # Nos servira para mandarle la imagen de plan de estudios de la carrea
 <Plan@Image>
     size: self.size
-    source: 'data/1.png'
     size: self.texture_size
 # Agregamos la imagen de Plan y la ingresamos en Widgit que se pueda mover
 <PlanDeEstudio@Screen>
@@ -86,7 +85,9 @@
     duracion:" "
     sede: " " 
     horario: " "
-    modalidad: " "  
+    modalidad: " " 
+    requerimiento:"02.jpeg" 
+    plan:"02.jpeg"
     nombreVentana:"principal"  # para regresar una ventana cuando este en Carreras
     Screen:
         name: "principal"
@@ -878,6 +879,13 @@
         #     name:"planestudio" 
     PlanDeEstudio:
         name: 'requisitos'
+        Widget: 
+            Scatter:
+                size_hint: None, None
+                size: image.size
+                Plan:
+                    id: image
+                    source: 'data/plan/'+root.requerimiento
         Boton_Atras:
             on_press:  root.current = "carreras"
     PlanDeEstudio:
@@ -894,6 +902,6 @@
                 size: image.size
                 Plan:
                     id: image
-                    source: 'data/2.png'
+                    source: 'data/plan/'+root.plan
         Boton_Atras:
             on_press:  root.current = "carreras"

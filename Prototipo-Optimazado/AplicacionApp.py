@@ -53,6 +53,12 @@ class Ventanas(ScreenManager):
                 if i==5:
                     print("Modalidad: ",valor[i])
                     self.modalidad= valor[i]
+                if i==6:
+                    print("imagen requerimiento: ",valor[i])
+                    self.requerimiento= valor[i]
+                if i==7:
+                    print("imagen plan: ",valor[i])
+                    self.plan= valor[i]
         else:
             print("no esta DISPONIBLE")
     

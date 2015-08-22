@@ -43,6 +43,14 @@ def DbCarreras(linciatura):
                     # print("Modalidad: ",datos[i])
                     contenido.append(datos[i])
                     # print(contenido    
+                if i==6:
+                    # print("Modalidad: ",datos[i])
+                    contenido.append(datos[i])
+                    # print(contenido    
+                if i==7:
+                    # print("Modalidad: ",datos[i])
+                    contenido.append(datos[i])
+                    # print(contenido    
     except Exception as e: 
         print("Error %s : "%(e.args[0]) )
     finally:

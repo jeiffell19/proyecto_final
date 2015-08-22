@@ -1,15 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import sqlite3 
+import os.path
+
 
 def DbCarreras(linciatura): 
     contenido =[]
     con = None  
     try:
-        con = sqlite3.connect('bd_lincenciaturas')    
+        #traer la dirrecion del archivo
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "BD_carreras")
+        con = sqlite3.connect(db_path)    
         cur = con.cursor()    
+        
         # cur.execute('SELECT * FROM Carrera')
-        consulta= ("SELECT * FROM Carrera WHERE resolucion LIKE '{}'".format(linciatura))
+        consulta= ("SELECT * FROM carrera WHERE resolucion LIKE '{}'".format(linciatura))
         cur.execute(consulta)
         datos = cur.fetchone()
         if datos == None:
@@ -44,5 +50,5 @@ def DbCarreras(linciatura):
             con.close()
     return contenido
 
-# lic= '123456'
+# lic= 'CTF-173 -2011 / 27-Diciembre-2011'
 # print(DbCarreras(lic))

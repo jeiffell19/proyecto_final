@@ -61,14 +61,8 @@
     size_hint:(None, None)
     size:(150, 30)
     pos_hint:{'center_x': .25,'center_y': .03}
-<Boton_Menu_Principal@Button>
-    text: 'Menu Principal'
-    background_color: (0, 0, 255,.5)
-    size_hint:(None, None)
-    size:(150, 30)
-    pos_hint:{'center_x': .5,'center_y': .03}
 <Boton_Siguiente@Button>
-    text: 'Siguiente'
+    text: 'Menu Principal'
     background_color: (0, 0, 255,.5)
     size_hint:(None, None)
     size:(150, 30)
@@ -344,33 +338,50 @@
         Add_Carrera:
             text:'LIC. EN ARQUITECTURA'      
             size:(530, 50)
-            on_press: root.current=('carreras')
+            on_press: 
+                root.current=('carreras')
+                root.datos('arquitectura','CTF-173 -2011 / 27-Diciembre-2011')
+                root.carrera() 
         Add_Carrera:
             text:'LIC. EN DISEÑO DE INTERIORES'
             size:(530, 50)
             pos_hint:{'center_x': .5,'center_y': .6}
-            on_press: root.current=('carreras') 
+            on_press: 
+                root.current=('carreras')
+                root.datos('arquitectura','CTF-17-2014 del 28 de abril de 2014')
+                root.carrera() 
         Add_Carrera:
             text:'LIC. EN DISEÑO GRAFICO'
             size:(530, 50)
             pos_hint:{'center_x': .5,'center_y': .5}
-            on_press: root.current=('carreras') 
+            on_press: 
+                root.current=('carreras')
+                root.datos('arquitectura','CTF-18-2014 del 28 de abril de 2014')
+                root.carrera() 
         Add_Carrera:
             text:'LIC. EN DISEÑO GRAFICO CON ENFASIS EN PUBLICIDAD Y MERCADEO'
             size:(530, 50)
             pos_hint:{'center_x': .5,'center_y': .4}
-            on_press: root.current=('carreras')
+            on_press: 
+                root.current=('carreras')
+                root.datos('arquitectura','CTF-52 -2013 / 23-Agosto-2013')
+                root.carrera() 
         Add_Carrera:
             text:'LIC. EN COM. AUDIOVISUAL CON ENFASIS EN PRODUCCION DE RADIO Y TV'
             size:(530, 50)
             pos_hint:{'center_x': .5,'center_y': .3}    
-            on_press: root.current=('carreras')  
+            on_press: 
+                root.current=('carreras')
+                root.datos('arquitectura','CTF-65-2013 del 28 de noviembre de 2013')
+                root.carrera()   
         Add_Carrera:
             text:'LIC. EN PUBLICIDAD Y MERCADEO CON ÈNFASIS EN IMAGEN CORPORATIVA'
             size:(530, 50)
             pos_hint:{'center_x': .5,'center_y': .2}    
             on_press: 
-                root.current=('carreras')  
+                root.current=('carreras')
+                root.datos('arquitectura',"CTF-135-2012- CTF-116-2011")
+                root.carrera()  
         Boton_Atras:
             on_press: root.current = "licenciatura"
         Boton_Siguiente:

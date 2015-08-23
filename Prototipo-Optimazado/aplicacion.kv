@@ -18,7 +18,7 @@
 #Propiedades para las titulos  
 <Titulo@Label>
     markup: True
-    font_name: 'snap____.ttf' 
+    #font_name: 'snap____.ttf' 
     font_size: 25        
     size_hint:(None, None)
     size:(100, 44)
@@ -26,7 +26,7 @@
 # Agregamos cada oferta academica que contendra las propiedades basicas
 <Add_Oferta@Button>
 	markup: True
-	font_name: 'britanic.ttf'
+	#font_name: 'britanic.ttf'
     pos_hint:{'center_x': .5,'center_y': .7}
     size_hint:(None, None)
     size:(250, 50)
@@ -279,7 +279,7 @@
             text:'SISTEMA DE INFORMACION'
             pos_hint:{'center_x': .35,'center_y': .3}
             on_press:
-                root.current=('sistemaimestria')
+                root.current=('sistemaimaestria')
         Add_Facultad:
             text:'SALUD'
             pos_hint:{'center_x': .35,'center_y': .2}
@@ -488,31 +488,46 @@
             text:('DOCTOR EN MEDICINA')
             background_color: (0, 1, 255, 255) 
             size:(320, 50)
-            on_release: root.current=('carreras')
+            on_press: 
+                root.current=('carreras')
+                root.datos('salud',"CTF-29-2014 del 28 de abril de 2014")
+                root.carrera() 
         Add_Carrera:
             text:('DOCTOR EN CIRUGIA DENTAL')
             background_color: (0, 1, 255, 255)
             pos_hint:{'center_x': .5,'center_y': .6} 
             size:(320, 50)
-            on_release: root.current=('carreras') 
+            on_press: 
+                root.current=('carreras')
+                root.datos('salud',"CTF-28-2014 del 28 de abril de 2014")
+                root.carrera() 
         Add_Carrera:
             text:('LICENCIATURA EN ENFERMERIA')
             background_color: (0, 1, 255, 255)
             pos_hint:{'center_x': .5,'center_y': .5} 
             size:(320, 50)
-            on_release: root.current=('carreras') 
+            on_press: 
+                root.current=('carreras')
+                root.datos('salud',"CTF-27-2014 del 28 de abril de 2014")
+                root.carrera() 
         Add_Carrera:
             text:('LICENCIATURA EN PSICOLOGIA')
             background_color: (0, 1, 255, 255)
             pos_hint:{'center_x': .5,'center_y': .4} 
             size:(320, 50)
-            on_release: root.current=('carreras') 
+            on_press: 
+                root.current=('carreras')
+                root.datos('salud',"CTF-117-2011 / 27-Diciembre-2011")
+                root.carrera() 
         Add_Carrera:
             text:('LICENCIATURA EN NUTRICION Y DIETETICA')
             background_color: (0, 1, 255, 255)
             pos_hint:{'center_x': .5,'center_y': .3}
             size:(320, 50) 
-            on_release: root.current=('carreras')      
+            on_press: 
+                root.current=('carreras')
+                root.datos('salud',"CTF-26-2014 del 28 de abril de 2014")
+                root.carrera()            
         Boton_Atras:
             on_press: root.current = "licenciatura"
         Boton_Siguiente:
@@ -590,7 +605,7 @@
             on_press: root.current=('carreras')         
         Add_Carrera:
             text:('LIC. EN ING. EN SISTEMAS COMPUTACIONALES')
-            pos_hint:{'center_x': .5,'center_y': .7}
+            pos_hint:{'center_x': .5,'center_y': .72}
             size:(530, 40)    
             on_press: 
                 root.current=('carreras')
@@ -599,38 +614,43 @@
         Add_Carrera:
             text:('LIC. EN ING. EN ELECTRONICA Y COMUNICACIONES')
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .6}    
+            pos_hint:{'center_x': .5,'center_y': .64}    
             on_press: root.current=('carreras')
         Add_Carrera:
             text:('LIC. EN ING. INDUSTRIAL CON ENFASIS EN GESTION DE CALIDAD')
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .5}    
+            pos_hint:{'center_x': .5,'center_y': .56}    
             on_press: root.current=('carreras')
         Add_Carrera:
             text:('LIC. EN ING. INDUSTRIAL CON ENFASIS EN GESTION DE OPERACIONES')            
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .4}    
+            pos_hint:{'center_x': .5,'center_y': .48}    
             on_press: root.current=('carreras')
         Add_Carrera:
             text:('LIC. EN ING. INFORMATICA CON ENFASIS EN DESARROLLO DE SOFTWARE')
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .3}    
+            pos_hint:{'center_x': .5,'center_y': .40}    
             on_press: root.current=('carreras')
         Add_Carrera:
             text:('LIC. EN ING. INFORMATICA CON ENFASIS EN REDES Y SIST. TELEMATICOS')
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .2}    
+            pos_hint:{'center_x': .5,'center_y': .32}    
             on_press: root.current=('carreras')
         Add_Carrera:
             text:('LIC. EN ING. INDUSTRIAL Y DE SISTEMAS')
             size:(530, 40)
-            pos_hint:{'center_x': .5,'center_y': .1}    
+            pos_hint:{'center_x': .5,'center_y': .24}    
+            on_press: root.current=('carreras')
+        Add_Carrera:
+            text:('LIC. EN SIS. COMP. CON ÉNFASIS EN DESARROLLO\n DE SIS. AVANZADOS DE REDES Y SOFTWARE')
+            size:(530, 40)
+            pos_hint:{'center_x': .5,'center_y': .16}    
             on_press: root.current=('carreras')
         Boton_Atras:
             on_press: root.current = "licenciatura"
         Boton_Siguiente:
             on_press: root.current = "principal"
-    Facultades: #Maritima
+    Facultades: #Maritima    
         name: 'maritima'
         canvas:
             Rectangle:
@@ -696,25 +716,25 @@
         Add_Carrera:
             text:'M. en Adm. de Negocios con Enfasis en Gerencia Estrategica'
             size:(530, 50)
-            pos_hint:{'center_x': .5,'center_y': .50}
+            pos_hint:{'center_x': .5,'center_y': .40}
             on_release:
                 root.current=('carreras')
         Add_Carrera:
             text:'M. en Adm. de Negocios con Enfasis en Comercio Internacional'
             size:(530, 50)
-            pos_hint:{'center_x': .5,'center_y': .40}
+            pos_hint:{'center_x': .5,'center_y': .30}
             on_release:
                 root.current=('carreras')
         Add_Carrera:
             text:'M. en Contabilidad con Enfasis en Gestion Tributaria y Fiscal'
             size:(530, 50)
-            pos_hint:{'center_x': .5,'center_y': .30}
+            pos_hint:{'center_x': .5,'center_y': .20}
             on_release:
                 root.current=('carreras')
         Add_Carrera:
             text:'M. en Adm. Hotelera'
             size:(530, 50)
-            pos_hint:{'center_x': .5,'center_y': .20}
+            pos_hint:{'center_x': .5,'center_y': .10}
             on_release:
                 root.current=('carreras')
         Boton_Atras:
@@ -742,6 +762,7 @@
             pos_hint:{'center_x': .5,'center_y': .6}
             on_release:
                 root.current=('carreras')
+
         Add_Carrera:
             text:'M. en Gerencia de Transporte Multimoda'
             size:(400, 50)
@@ -806,9 +827,15 @@
             on_release:
                 root.current=('carreras')
         Add_Carrera:
+            text:'Maestría en Mediación, Negociación y Arbitraje'
+            size:(500, 50)
+            pos_hint:{'center_x': .5,'center_y': .5}
+            on_release:
+                root.current=('carreras')
+        Add_Carrera:
             text:'Maestria en Derecho Civil y Penal'
             size:(500, 50)
-            pos_hint:{'center_x': .5,'center_y': .50}
+            pos_hint:{'center_x': .5,'center_y': .4}
             on_release:
                 root.current=('carreras')
         Boton_Atras:
@@ -844,7 +871,7 @@
             Rectangle:
                 pos: self.pos
                 size: self.size
-                # source: 'data/'
+                source: 'data/servicio-salud.jpg'
         Titulo:
             text:
                 ('[b]SALUD[/b]')
